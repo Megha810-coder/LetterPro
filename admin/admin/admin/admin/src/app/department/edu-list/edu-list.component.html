@@ -1,0 +1,107 @@
+<div class="col-lg-12">
+  <div class="card">
+      <div class="w3-bar"> 
+          <div class="input-group">
+              <div class="row align-items-center">
+                
+              
+
+                <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                  <button type="button" (click)="save();" class="btn btn-pill btn-block btn-primary">Create</button>
+                </div> 
+                  <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                    <a [routerLink] = "'/ehs_module/Mail'"> <button type="button" class="btn btn-pill btn-block btn-primary">Email</button></a>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-2 col-xl mb-3\] mb-xl-0">
+                    <button type="button" class="btn btn-pill btn-block btn-primary" (click)="exportAsXLSX()">Export</button>
+                  </div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                  <a [routerLink] = "'/department/agri-form'"> <button type="button"  class="btn btn-pill btn-block btn-primary">Scan Letter</button></a>
+                </div> 
+                 
+                </div>
+          </div>
+        </div>
+    <div class="card-header">
+        <i class="fa fa-align-justify"></i>Praposal Report:<b><font size="4">&nbsp;&nbsp;</font></b>
+    </div> <br>
+    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+      Search:-
+      <input type="text" name="search"  [(ngModel)]="searchtext" autocomplete="off" placeholder="search">
+    </div><br>
+    <div class="card-body">
+   
+         
+           <table class="table table-bordered table-striped table-sm">
+            <thead>
+           
+                <th>Sr No</th>
+                <th>School/College</th>
+                <th>School/College Code</th>
+                <th>Contact no</th>
+                <th>Letter Status</th>
+                <th>Address</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let file of myresponse | filter:searchtext let i=index;">
+                  <td>{{file.pro_id}}</td>
+                <td>{{file.pro_name}}</td>
+                <td>{{file.college_code}}</td>
+                <td>{{file.contact_no}}</td> 
+                <td>{{file.file_status}}</td>
+                <td>{{file.address}}</td>
+                <td><button type="button" class="btn btn-info mr-1" (click)="updateAss_cleark(file)">UPDATE</button> 
+               
+                 <button type="button" class="btn btn-info mr-1"  (click)="viewProposal1(file)">VIEW</button> 
+                
+               <!-- <button type="button" class="btn btn-info mr-1" (click)="deleteHazardous(hazardous.hazard_id);">DELETE</button>  -->
+               <button type="button" class="btn btn-info mr-1" data-toggle="modal" (click)="infoModal.show()"(click)="deleteProposal1(file.pro_id)">DELETE</button>
+              </td>
+  
+             
+                
+              </tr>
+            </tbody>  
+          </table>
+
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div bsModal #infoModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-info" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">DELETE</h4>
+          <button type="button" class="close" (click)="infoModal.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to Delete?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="infoModal.hide()">CANCLE</button>
+        <button type="button" class="btn btn-info"  (click)="deleteProposal1();">DELETE</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+

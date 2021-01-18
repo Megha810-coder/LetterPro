@@ -1,0 +1,171 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12 mb-8">
+      <div class="card-footer">
+        <a [routerLink]="'/department/head-cleark-list'"> <button type="submit" class="btn btn-sm btn-primary"><i
+              class="fa fa-dot-circle-o"></i> Back </button></a>
+      </div>
+
+
+      <form (ngSubmit)="onClickSubmit()">
+
+
+        <tabset>
+          <tab>
+            <ng-template tabHeading><i class="icon-list"></i> PRAPOSAL DETAILS&nbsp;</ng-template>
+            <div class="card-body">
+
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b>School/College Name</b></label>
+                </div>
+                <div class="col-md-3">
+                  {{file.pro_name}}
+                </div>
+
+
+
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b>School/College Code</b></label>
+                </div>
+                <div class="col-md-3">
+                 {{file.college_code}}
+                </div>
+
+
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b> Contact No</b></label>
+                </div>
+                <div class="col-md-3">
+                 {{file.contact_no}}
+                </div>
+
+
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b> Email Id</b></label>
+                </div>
+                <div class="col-md-3">
+                  {{file.email}}
+                </div>
+
+
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b> Address</b></label>
+                </div>
+                <div class="col-md-3">
+                  {{file.address}}
+                </div>
+
+
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b> Prarosal</b></label>
+                </div>
+
+               {{file.proposal}}
+
+    
+
+              </div><br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b> File Status</b></label>
+                </div>
+                <div class="col-md-3">
+                  <input type="radio" value="1" name="file_status" [(ngModel)]="file.file_status"> Complete
+
+                </div>
+
+
+              </div>
+
+              <br>
+
+              <button type="button" class="btn btn-info mr-1">Scan File</button>
+              <br><br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b>Accept From Sub Assistant Cleark</b></label>
+                </div>
+                <div class="col-md-3">
+                  <input type="radio" value="1" name="cleark" [(ngModel)]="file.cleark"> Accept<br>
+
+                  <input type="radio" value="0" name="cleark" [(ngModel)]="file.cleark"> Reject<br>
+                </div>
+
+              </div><br>
+
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b>Accept By Assistant Cleark</b></label>
+                </div>
+                <div class="col-md-3">
+                  <input type="radio" value="1" name="ass_clerk" [(ngModel)]="file.ass_clerk"> Accept<br>
+                  <input type="radio" value="0" name="ass_clerk" [(ngModel)]="file.ass_clerk"> Reject<br>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b>Accept By Head Cleark</b></label>
+                </div>
+                <div class="col-md-3">
+                  <input type="radio" value="1" name="head_clerk" [(ngModel)]="file.head_clerk"> Accept<br>
+                  <input type="radio" value="0" name="head_clerk" [(ngModel)]="file.head_clerk"> Reject<br>
+                </div>
+              </div>
+            </div>
+          </tab>
+
+        </tabset>
+
+
+
+        <div class="card-footer">
+          <button type="submit" class="btn btn-sm btn-primary" data-toggle="modal" (click)="infoModal.show()"><i
+              class="fa fa-dot-circle-o"></i> Submit </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<div bsModal #infoModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-info" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Send</h4>
+        <button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Your Data Saved successfully.&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary">Close</button>
+        <a [routerLink]="'/department/head-cleark-list'"> <button type="button" class="btn btn-info">Okay</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div >
+      <a [routerLink] = ""> <button type="submit" class="btn btn-sm btn-primary">Scan</button></a>
+  </div> -->

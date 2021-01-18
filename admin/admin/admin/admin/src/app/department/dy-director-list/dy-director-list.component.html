@@ -1,0 +1,113 @@
+<div class="col-lg-12">
+  <div class="card">
+      
+    <div class="card-header">
+        <i class="fa fa-align-justify"></i>Praposal Report:<b><font size="4">&nbsp;&nbsp;</font></b>
+    </div>
+    <div class="card-body">
+      <!-- <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>	CHEMICAL NAME</th>
+            <th>	PRODUCT CODE</th>
+            <th>DATE</th>
+            <th>FORMULA</th>
+            <th>SUPPLIER NAME</th>
+        
+          </tr>
+          <tbody>
+              <tr>
+                <td>Gas Oil Diesel</td>
+                <td>MGO-MDO</td>
+                <td>2019/01/01</td>
+                <td>C10H20 TO C15H28 </td>
+                <td>JOHN </td>
+             
+              </tr>
+              <tr>
+                <td>Sulphuric Acid</td>
+                <td>7664-39-9</td>
+                <td>2019/04/01</td>
+                <td>H2So4</td>
+                <td>Mike</td>
+              <tr>
+                <td>Propylene </td>
+                <td>115-07-1</td>
+                <td>2019/02/12</td>
+                <td>C3h6</td>
+                <td>Symond</td>
+         
+              </tr>
+              <tr>
+                <td>LPG</td>
+                <td>1075</td>
+                <td>2019/03/11</td>
+                <td>C3H8,C4H10</td>
+                <td>John</td>
+               
+              </tr>
+              <tr>
+                <td>Chlorine</td>
+                <td>7782-50-5</td>
+                <td>2012/01/21</td>
+                <td>CI2</td>
+                <td>Mike</td>
+                
+              </tr>
+            </tbody>     
+           </table> -->
+           <div class="search-hero">
+         
+      <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+        Search:-
+        <input type="text" name="search"  [(ngModel)]="searchtext" autocomplete="off" placeholder="search">
+      </div><br>
+           <table class="table table-bordered table-striped table-sm">
+            <thead>
+           
+              <th>Sr No</th>
+              <th>School/College</th>
+              <th>School/College Code</th>
+              <th>Contact no</th>
+              <th>Letter Status</th>
+              <th>Signed By</th>
+              <th>Address</th>
+              <th>Action</th>
+          </thead>
+          <tbody>
+            <tr>
+              <tr *ngFor="let file of myresponse | filter:searchtext let i=index">
+                <td>{{file.pro_id}}</td>
+              <td>{{file.pro_name}}</td>
+              <td>{{file.college_code}}</td>
+              <td>{{file.contact_no}}</td> 
+              <td>{{file.file_status}}</td>
+              <td>{{file.address}}</td>
+                <td><button type="button" class="btn btn-info mr-1" (click)="updateDyDirector(file)">UPDATE</button>
+               
+                 <button type="button" class="btn btn-info mr-1" (click)="viewDyDirector(file)">VIEW</button>
+                
+               <!-- <button type="button" class="btn btn-info mr-1" (click)="deleteHazardous(hazardous.hazard_id);">DELETE</button>  -->
+               <a [routerLink] = "'/department/edu-form'"> <button type="button" class="btn btn-info mr-1">Create</button></a>
+              </td>
+  
+             
+                
+              </tr>
+            </tbody>  
+          </table>
+
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+

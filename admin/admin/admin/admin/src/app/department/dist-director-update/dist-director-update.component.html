@@ -1,0 +1,208 @@
+<div class="animated fadeIn">
+  <div class="row">
+      <div class="col-md-12 mb-8">
+          <div class="card-footer">
+              <a [routerLink] = "'/department/Agri'"> <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Back </button></a>
+          </div>
+          <form  (ngSubmit) = "onClickSubmit()">
+              <!-- <form #user="ngForm" (ngSubmit)="create(user.value)">  -->
+
+              
+                <tabset>
+                            <tab>
+              <ng-template tabHeading><i class="icon-list"></i> PRAPOSAL DETAILS&nbsp;</ng-template>
+              <div class="card-body">
+                    
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="date"> <b>School/College Name</b></label>
+                      </div>
+                      <div class="col-md-3">
+                          <input type="text" name="pro_name" class="form-control"  [(ngModel)]="file.pro_name">
+                        </div>
+   
+                    </div>
+              <br>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="date"> <b>School/College Code</b></label>
+                      </div>
+                      <div class="col-md-3">
+                          <input type="text" name="college_code" class="form-control"   [(ngModel)]="file.college_code" >
+                        </div>
+
+                   
+                    </div>
+                   <br> 
+                   <div class="row">
+                    <div class="col-md-3">
+                      <label for="date"> <b> Contact No</b></label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="contact_no" class="form-control" [(ngModel)]="file.contact_no"  >
+                      </div>
+
+                 
+                  </div>
+                 <br> 
+                 <div class="row">
+                  <div class="col-md-3">
+                    <label for="date"> <b> Email Id</b></label>
+                  </div>
+                  <div class="col-md-3">
+                      <input type="text"  name="email" class="form-control" [(ngModel)]="file.email" >
+                    </div>
+
+               
+                </div>
+               <br>   
+               <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b> Address</b></label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="address" class="form-control" [(ngModel)]="file.address">
+                  </div>
+
+             
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b> Proposal</b></label>
+                </div>
+            
+                  <textarea class="col-md-3"  name="proposal"
+          rows="5" cols="33" [(ngModel)]="file.proposal">
+
+    </textarea>&nbsp;&nbsp;&nbsp;&nbsp;
+
+              </div><br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b> File Status</b></label>
+                </div>
+                <div class="col-md-3">
+                  <input type="radio" name="file_status" value="1" [(ngModel)]="file.file_status"> Complete
+                  <!-- <input type="radio" name="vehicle" value="Car" > InComplete<br> -->
+                  </div>
+              
+              
+              </div>
+                 
+              <br>
+            
+              <button type="button" class="btn btn-info mr-1">Scan File</button> 
+   <br><br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b>Accept From Sub Assistant Cleark</b></label>
+                </div>
+                <div class="col-md-3">
+                  <input type="radio" value="1" name="cleark" [(ngModel)]="file.cleark"> Accepted<br> 
+                  
+                    <input type="radio" value="0" name="cleark" [(ngModel)]="file.cleark"> Reject<br>              </div>
+              
+              
+              </div><br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b>Accept From  Assistant Cleark</b></label>
+                </div>
+                <div class="col-md-3">
+                  <input type="radio" value="1" name="ass_cleark" [(ngModel)]="file.ass_clerk"> Accepted<br> 
+                  
+                    <input type="radio" value="0" name="ass_cleark" [(ngModel)]="file.ass_clerk"> Reject<br>              </div>
+              
+              
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b>Accept From  Head Clerk</b></label>
+                </div>
+                <div class="col-md-3">
+                  <input type="radio" value="1" name="head_clerk" [(ngModel)]="file.head_clerk"> Accepted<br> 
+                  
+                    <input type="radio" value="0" name="head_clerk" [(ngModel)]="file.head_clerk"> Reject<br>              </div>
+              
+              
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b>Accept From  Dy Director</b></label>
+                </div>
+                <div class="col-md-3">
+                  <input type="radio" value="1" name="dy-director" [(ngModel)]="file.dy_director"> Accepted<br> 
+                  
+                    <input type="radio" value="0" name="dy-director" [(ngModel)]="file.dy_director"> Reject<br>              </div>
+              
+              
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b>Accept From  Dist Director</b></label>
+                </div>
+                <div class="col-md-3">
+                  <input type="radio" value="1" name="dist_director" [(ngModel)]="file.dist_director"> Accepted<br> 
+                  
+                    <input type="radio" value="0" name="dist_director" [(ngModel)]="file.dist_director"> Reject<br>              </div>
+              
+              
+              </div>
+      
+                </div>
+            </tab>
+
+          </tabset>
+           
+          <div class="card-footer">
+            <button type="submit" class="btn btn-sm btn-primary" data-toggle="modal" (click)="infoModal.show()"><i class="fa fa-dot-circle-o"></i> Submit </button>
+            </div>
+            </form>
+          
+       </div> <!--/.col-->
+  </div>
+  </div>
+  <div bsModal #infoModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-info" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Send</h4>
+          <button type="button" class="close"  aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Your Data Saved successfully.&hellip;</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="infoModal.hide()">Close</button>
+          <a [routerLink] = "'/department/Agri'">  <button type="button" class="btn btn-info">Okay</button></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  <!--
+  <div bsModal #infoModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-info" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Send</h4>
+          <button type="button" class="close"  aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Your Data Saved successfully.&hellip;</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" >Close</button>
+          <a [routerLink] = "'/ehs_module/Hazardous'">  <button type="button" class="btn btn-info">Okay</button></a>
+        </div>
+      </div>
+    </div>
+    </div>-->
+    
+  
+  
+

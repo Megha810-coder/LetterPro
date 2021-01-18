@@ -1,0 +1,357 @@
+
+<ng-template #content3 let-modal>
+  <div class="modal-header" style="background-color: lightsteelblue;">
+    <h4 class="modal-title" id="modal-basic-title" >Report</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+        <div class="card-card">
+            <div class="card-body">
+              <form #report = "ngForm" (ngSubmit) = "reportSubmit(report.value)">
+                <div class="modal-body">
+                  
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label for="date"> <b>From </b></label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="date" name="date1" class="form-control" ngModel>
+                      </div>
+                  </div><br>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label for="date"> <b> To </b></label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="date" name="date2" class="form-control" ngModel >
+                      </div>
+                  </div>
+                
+      
+                </div>
+               <div class="modal-footer"> 
+                    <button type="submit" value=" submit" class="btn btn-info">Submit</button> 
+                </div> 
+                
+              </form>
+            </div>
+          </div>
+  </div>
+</ng-template>
+
+<ng-template #content4 let-modal>
+  <div class="modal-header" style="background-color: lightsteelblue;">
+    <h4 class="modal-title" id="modal-basic-title" >Report</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+        <div class="card-card">
+            <div class="card-body">
+              <form #code = "ngForm" (ngSubmit) = "codeSubmit(code.value)">
+               
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="date"> <b> College code </b></label>
+                  </div>
+                  <div class="col-md-6">
+                      <input type="text" name="clg_code" class="form-control" ngModel >
+                    </div>
+                </div>
+               <div class="modal-footer"> 
+                    <button type="submit" value=" submit" class="btn btn-info">Submit</button> 
+                </div> 
+                
+              </form>
+            </div>
+          </div>
+  </div>
+</ng-template>
+
+<ng-template #content2 let-modal>
+  <div class="modal-header" style="background-color: lightsteelblue;">
+    <h4 class="modal-title" id="modal-basic-title" >Report</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+        <div class="card-card">
+            <div class="card-body">
+              <form #name = "ngForm" (ngSubmit) = "nameSubmit(name.value)">
+               
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="date"> <b> College Name </b></label>
+                  </div>
+                  <div class="col-md-6">
+                      <input type="text" name="clg_name" class="form-control" ngModel >
+                    </div>
+                </div>
+               <div class="modal-footer"> 
+                    <button type="submit" value=" submit" class="btn btn-info">Submit</button> 
+                </div> 
+                
+              </form>
+            </div>
+          </div>
+  </div>
+</ng-template>
+
+<ng-template #content let-modal>
+  <div class="modal-header" style="background-color: lightsteelblue;">
+    <h4 class="modal-title" id="modal-basic-title" >Import</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+        <div class="card-card">
+            <div class="card-body">
+              <form #import = "ngForm" (ngSubmit) = "Import(import.value)">
+                <div class="modal-body">
+                  <h5>Import Labour's Data by excel sheet</h5>
+                  <p>Please choose only excel file..</p>
+                  <!-- <input type="file" ng2FileSelect [uploader]="uploader" ngModel > -->
+                  <!-- <div class="col-md-9">
+                    
+                    <input type="file" style="display: inline-block;" (change)="incomingfile($event)" placeholder="Upload File" accept=".xlsx">
+                       
+                    </div> -->
+                    <div class="input-group mb-3">
+                      <input type="file" class="form-control" name="file"  (change)="handleFileInput($event.target.files)" ngModel >
+              </div>
+      
+                </div>
+               <div class="modal-footer"> 
+                  <!-- <button type="button" class="btn btn-default waves-effect "
+                    data-dismiss="modal">Close</button> -->
+                  <!-- <button type="submit"
+                    class="btn btn-primary waves-effect waves-light ">Import</button> -->
+                    <button type="button" class="btn btn-info" (click)="Upload()">Upload</button> 
+                </div> 
+              </form>
+            </div>
+          </div>
+  </div>
+</ng-template>
+<ng-template #content1 let-modal>
+  <div class="modal-header" style="background-color: lightsteelblue;">
+    <h4 class="modal-title" id="modal-basic-title" >Search</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+        <div class="card-card">
+            <div class="card-body">
+              <form #search = "ngForm" (ngSubmit) = "Search(search.value)">
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="date"> <b> School Name</b></label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" name="pro_name" class="form-control" ngModel> 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="date"> <b> School/College Code</b></label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" name="college_code" class="form-control" ngModel>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="date"> <b> Proposal</b></label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" name="proposal" class="form-control" ngModel> 
+                  </div>
+                </div><br>
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="date"> <b> Address</b></label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" name="address" class="form-control" ngModel> 
+                  </div>
+                </div><br>
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="date"> <b> Date</b></label>
+                  </div>
+                  <div class="col-md-6">
+                      <input type="date" name="date" class="form-control" ngModel>
+                    </div>
+  
+               
+                </div><br>
+               <div class="modal-footer">                
+                    <button type="submit" class="btn btn-info" value="search">Search</button> 
+                </div> 
+              </form>
+
+            </div>
+          </div>
+  </div>
+</ng-template>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .dropbtn {
+  background-color: #20a8d8;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #20a8d8;}
+  </style>
+</head>
+<div class="col-lg-12">
+  <div class="card">
+      <div class="w3-bar"> 
+          <div class="input-group">
+              <div class="row align-items-center">
+                
+              
+
+                  <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                  <button type="button" (click)="save();" class="btn btn-pill btn-block btn-primary">Create</button>
+                  </div> 
+                  <div class="col-6 col-sm-4 col-md-2 col-xl mb-3\] mb-xl-0">
+                    <a [routerLink] = "''"> <button type="button" class="btn btn-pill btn-block btn-primary">Email</button></a>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-2 col-xl mb-3\] mb-xl-0">
+                    <button type="button" class="btn btn-pill btn-block btn-primary" (click)="exportAsXLSX()">Export</button>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                      <button type="button" class="btn btn-pill btn-block btn-primary" (click)="open(content)" ngModel>Import</button>
+                 </div>
+                 <div class="dropdown">
+                  <button class="btn btn-pill btn-block btn-primary" >Search</button>
+                  <div class="dropdown-content">
+                    <a (click)="open(content3)">Date</a>
+                    <a (click)="open(content4)">College code</a>
+                    <a (click)="open(content2)">College Name</a>
+                  </div>
+                </div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                  <a [routerLink] = "'/department/agri-form'"> <button type="button"  class="btn btn-pill btn-block btn-primary">Scan Letter</button></a>
+                </div> 
+                 
+                </div>
+          </div>
+        </div>
+    <div class="card-header">
+        <i class="fa fa-align-justify"></i>Praposal Report:<b><font size="4">&nbsp;&nbsp;</font></b>
+    </div><br>
+    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+      Search:-
+      <input type="text" name="search"  [(ngModel)]="searchtext" autocomplete="off" placeholder="search">
+    </div> 
+       <div class="card-body">
+   
+         
+           <table class="table table-bordered table-striped table-sm">
+            <thead>
+           
+                <th>Sr No</th>
+                <th>School/College</th>
+                <th>School/College Code</th>
+                <th>Contact no</th>
+                <th>Letter Status</th>
+                <th>Address</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+              <!-- <font color="red"> {{this.myresponse}}</font> -->
+
+
+              <tr *ngFor="let file of myresponse | filter:searchtext;let i=index;">
+                <td>{{file.pro_id}}</td>
+                <td>{{file.pro_name}}</td>
+                <td>{{file.college_code}}</td>
+                <td>{{file.contact_no}}</td> 
+                <td>{{file.file_status}}</td>
+                <td>{{file.address}}</td>
+                <td><button type="button" class="btn btn-info mr-1" (click)="updateProposal(file)">UPDATE</button> 
+               
+                 <button type="button" class="btn btn-info mr-1"  (click)="viewProposal(file)">VIEW</button> 
+                
+               <!-- <button type="button" class="btn btn-info mr-1" (click)="deleteHazardous(hazardous.hazard_id);">DELETE</button>  -->
+               <button type="button" class="btn btn-info mr-1" data-toggle="modal" (click)="infoModal.show()"(click)="deleteProposal(file.pro_id)">DELETE</button>
+              </td>
+
+              </tr>
+            </tbody>  
+          </table>
+
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+  </div>
+
+<div bsModal #infoModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-info" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">DELETE</h4>
+          <button type="button" class="close" (click)="infoModal.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to Delete?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="infoModal.hide()">CANCLE</button>
+        <button type="button" class="btn btn-info"  (click)="deleteProposal1();">DELETE</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
